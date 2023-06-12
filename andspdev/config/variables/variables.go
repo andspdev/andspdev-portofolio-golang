@@ -1,11 +1,17 @@
 package variables
 
-const DBUser string = "root"
-const DBPass string = ""
-const DBName string = "andsp_go"
+const (
+	PortServer = ":30902"
+	BaseURL = "http://localhost:30902"
+	SubRoutes = "/andspdev"
 
-const PortServer string = ":30902"
-const RootPath = "andspdev"
-const SubRoutes string = "/andspdev"
+	DBUser = "root"
+	DBPass = ""
+	DBName = "andsp_go"
 
-const BaseURL = "http://localhost:30902"
+	RootPath = "andspdev"
+
+	PathAssets = RootPath + "/assets"
+	PathUpload = RootPath + "/uploads"
+	PathViews = RootPath + "/views"
+)

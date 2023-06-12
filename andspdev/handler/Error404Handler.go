@@ -10,9 +10,9 @@ import (
 func Error404Handler(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusNotFound)
 
-	temp, err := template.ParseFiles(variables.RootPath+"/views/errors/404.html")
+	temp, err := template.ParseFiles(variables.PathViews + "/errors/404.html")
 
-	data := map[string]string {
+	data := map[string]string{
 		"request_uri": r.RequestURI,
 	}
 

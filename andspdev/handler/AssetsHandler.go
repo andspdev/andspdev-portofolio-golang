@@ -11,7 +11,7 @@ func AssetsHandler(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	path := vars["path"]
 
-	filepath := variables.RootPath+"/assets/" + path
+	filepath := variables.PathAssets + "/" + path
 
 	http.ServeFile(w, r, filepath)
 }
