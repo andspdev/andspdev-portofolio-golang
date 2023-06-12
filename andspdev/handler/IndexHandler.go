@@ -10,8 +10,7 @@ import (
 
 
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
-	var data map[string] any
-	data = make(map[string] any)
+	var data = make(map[string] any)
 
 	tmpl := template.New("index.html").Funcs(template.FuncMap{
 		"site_url": helpers.SiteURL,
