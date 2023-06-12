@@ -18,8 +18,7 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 	tmpl, err := tmpl.ParseFiles(variables.PathViews + "/home/index.html")
 
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
+		panic(err.Error())
 	}
 
 	data["title"] = "AndspID v2.0"
@@ -27,6 +26,6 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 	err = tmpl.Execute(w, data)
 
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+		panic(err.Error())
 	}
 }

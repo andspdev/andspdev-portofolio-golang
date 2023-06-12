@@ -17,7 +17,7 @@ func Error404Handler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if err != nil {
-		panic(err)
+		panic(err.Error())
 	}
 
 	temp.Execute(w, data)

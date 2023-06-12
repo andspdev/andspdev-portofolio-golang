@@ -15,7 +15,7 @@ func ConnectDB() {
 	db, err := sql.Open("mysql", variables.DBUser+":"+variables.DBPass+"@/"+variables.DBName+"?parseTime=true")
 
 	if err != nil {
-		panic(err)
+		panic(err.Error())
 	} else {
 		connect_db = db
 		log.Println("Database berhasil terkoneksi!")
