@@ -5,6 +5,7 @@ const (
 	BaseURL = "http://localhost:30902"
 	SubRoutes = "/andspdev"
 
+	DBHost = "localhost"
 	DBUser = "root"
 	DBPass = ""
 	DBName = "andsp_go"

@@ -9,8 +9,6 @@ import (
 	"andsp.id/andspdev/config/variables"
 )
 
-// const dbhost = ""
-
 var connect_db *sql.DB
 
 func ConnectDB() {
