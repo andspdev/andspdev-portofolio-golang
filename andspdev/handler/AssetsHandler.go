@@ -17,7 +17,7 @@ func AssetsHandler(w http.ResponseWriter, r *http.Request) {
 
 	fileInfo, err := os.Stat(filepath)
 
-	// Jika file tidak ada atau folder dibuat forbidden
+	// Jika file tidak ada atau folder dibuat not found
 	if os.IsNotExist(err) || fileInfo.IsDir() {
 		w.WriteHeader(http.StatusNotFound)
 
