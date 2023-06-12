@@ -8,17 +8,11 @@ import (
 )
 
 // const dbhost = ""
-const dbuser string = "root"
-const dbpass string = ""
-const dbname string = "andsp_go"
-
-const PortServer string = ":30902"
-const SubRoutes string = "/andspdev"
 
 var connect_db *sql.DB
 
 func ConnectDB() {
-	db, err := sql.Open("mysql", dbuser+":"+dbpass+"@/"+dbname+"?parseTime=true")
+	db, err := sql.Open("mysql", DBUser+":"+DBPass+"@/"+DBName+"?parseTime=true")
 
 	if err != nil {
 		panic(err)

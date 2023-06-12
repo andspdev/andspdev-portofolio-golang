@@ -1,10 +1,10 @@
 package config
 
 import (
-	"fmt"
 	"net/http"
 
 	"github.com/gorilla/mux"
+	"andsp.id/andspdev/handler"
 )
 
 func Routes() http.Handler {
@@ -13,7 +13,7 @@ func Routes() http.Handler {
 
 	// Index
 	serverMux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprint(w, "Hello World!")
+		handler.IndexHandler(w, r, RootPath)
 	})
 
 	// Login
@@ -24,6 +24,12 @@ func Routes() http.Handler {
 	// Lupa Sandi
 	serverMux.HandleFunc(SubRoutes+"/lupa-sandi", func(w http.ResponseWriter, r *http.Request) {
 		// -----
+	})
+
+
+	// Handle Tampilan 404 Not Found
+	serverMux.NotFoundHandler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		handler.Error404Handler(w, r, RootPath)
 	})
 
 	return serverMux
