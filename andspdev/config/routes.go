@@ -3,8 +3,8 @@ package config
 import (
 	"net/http"
 
-	"github.com/gorilla/mux"
 	"andsp.id/andspdev/handler"
+	"github.com/gorilla/mux"
 )
 
 func Routes() http.Handler {
@@ -25,7 +25,6 @@ func Routes() http.Handler {
 	serverMux.HandleFunc(SubRoutes+"/lupa-sandi", func(w http.ResponseWriter, r *http.Request) {
 		// -----
 	})
-
 
 	// Handle Tampilan 404 Not Found
 	serverMux.NotFoundHandler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
