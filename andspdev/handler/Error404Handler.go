@@ -3,12 +3,14 @@ package handler
 import (
 	"html/template"
 	"net/http"
+
+	"andsp.id/andspdev/config/variables"
 )
 
-func Error404Handler(w http.ResponseWriter, r *http.Request, root string) {
+func Error404Handler(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusNotFound)
 
-	temp, err := template.ParseFiles(root+"/views/errors/404.html")
+	temp, err := template.ParseFiles(variables.RootPath+"/views/errors/404.html")
 
 	data := map[string]string {
 		"request_uri": r.RequestURI,

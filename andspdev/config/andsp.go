@@ -5,6 +5,8 @@ import (
 	"log"
 
 	_ "github.com/go-sql-driver/mysql"
+
+	"andsp.id/andspdev/config/variables"
 )
 
 // const dbhost = ""
@@ -12,7 +14,7 @@ import (
 var connect_db *sql.DB
 
 func ConnectDB() {
-	db, err := sql.Open("mysql", DBUser+":"+DBPass+"@/"+DBName+"?parseTime=true")
+	db, err := sql.Open("mysql", variables.DBUser+":"+variables.DBPass+"@/"+variables.DBName+"?parseTime=true")
 
 	if err != nil {
 		panic(err)
